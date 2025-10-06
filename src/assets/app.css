@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.required:after {
+  content: " *";
+  color: #e11d48; /* Tailwind's red-600 color */
+}
+
+.optional:after {
+  content: " (optional)";
+  color: #6b7280; /* Tailwind's gray-500 color */
+  font-style: italic;
+  font-size: 0.875rem; /* Slightly smaller font size */
+}

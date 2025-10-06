@@ -1,0 +1,112 @@
+---
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="New Error Report">
+  <div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <!-- Animated background gradients -->
+    <div class="absolute top-20 left-20 w-72 h-72 bg-violet-600/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-20 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 0.5s;"></div>
+
+    <!-- Glassmorphism card -->
+    <div class="relative backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 max-w-lg w-full">
+      <!-- Header with gradient -->
+      <div class="mb-6">
+        <div class="flex items-center gap-3 mb-2">
+          <h1 class="text-3xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
+            Report New Error
+          </h1>
+        </div>
+        <p class="text-gray-300 text-sm">Help us improve by reporting issues you encounter</p>
+      </div>
+
+      <!-- Form -->
+      <form
+        action="/api/report"
+        method="post"
+        enctype="multipart/form-data"
+        class="flex flex-col gap-4"
+      >
+        <!-- Title input -->
+        <div class="form-control flex flex-col">
+            <label class="label required">
+                <span class="label-text text-gray-200 font-medium text-sm">Title</span>
+            </label>
+            <input
+                name="title"
+                placeholder="Brief description of the error"
+                class="input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-500 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
+                required
+            />
+        </div>
+
+        <!-- Username input -->
+        <div class="form-control flex flex-col">
+            <label class="label required">
+                <span class="label-text text-gray-200 font-medium text-sm">Name Account</span>
+            </label>
+            <input
+                name="username"
+                placeholder="Brief description of the error"
+                class="input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-500 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
+                required
+            />
+        </div>
+
+        <!-- Message textarea -->
+        <div class="form-control flex flex-col">
+          <label class="label required">
+            <span class="label-text text-gray-200 font-medium text-sm">Error Details</span>
+          </label>
+          <textarea
+            name="message"
+            placeholder="Describe what happened and steps to reproduce..."
+            class="textarea w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-500 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300 min-h-32"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Severity select -->
+        <div class="form-control flex flex-col">
+          <label class="label">
+            <span class="label-text text-gray-200 font-medium text-sm">Severity Level</span>
+          </label>
+          <select
+            name="severity"
+            class="select w-full bg-white/5 border-white/10 backdrop-blur-sm text-white focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
+          >
+            <option value="bug" class="bg-slate-800 text-white">bug</option>
+            <option value="error" selected class="bg-slate-800 text-white">error</option>
+            <option value="page_not_found" class="bg-slate-800 text-white">halaman tidak ditemukan</option>
+            <option value="other">Lainnya</option>
+          </select>
+        </div>
+
+        <!-- File input -->
+        <div class="form-control flex flex-col">
+          <label class="label">
+            <span class="label-text text-gray-200 font-medium text-sm optional">Screenshot</span>
+          </label>
+          <input
+            type="file"
+            name="screenshot"
+            accept="image/*"
+            class="file-input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white file:bg-white/10 file:border-0 file:text-white file:mr-4 hover:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300 text-sm"
+          />
+        </div>
+
+        <!-- Submit button -->
+        <button
+          type="submit"
+          class="btn bg-gradient-to-r from-violet-600 to-fuchsia-600 border-0 text-white font-semibold mt-2 hover:from-violet-700 hover:to-fuchsia-700 hover:shadow-xl hover:shadow-violet-500/25 hover:scale-[1.02] transition-all duration-300 normal-case"
+        >
+          <span>Send Report</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</Layout>
