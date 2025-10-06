@@ -1,0 +1,35 @@
+name: Notify Discord on Vercel Deploy
+
+on:
+  push:
+    branches:
+      - main  # atau branch deploy kamu
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify start
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d "{\"content\": \"🚀 Deployment started for **${{ github.repository }}** (branch: \`${{ github.ref_name }}\`)\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Deploy to Vercel
+        run: |
+          npm install -g vercel
+          vercel --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
+
+      - name: Notify success
+        if: ${{ success() }}
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d "{\"content\": \"✅ Deployment **successful** for **${{ github.repository }}**!\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Notify failure
+        if: ${{ failure() }}
+        run: |
+          curl -H "Content-Type: application/json" \
+               -d "{\"content\": \"❌ Deployment **failed** for **${{ github.repository }}**.\"}" \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
