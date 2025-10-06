@@ -3,33 +3,48 @@ name: Notify Discord on Vercel Deploy
 on:
   push:
     branches:
-      - main  # atau branch deploy kamu
+      - main  # or the branch you deploy from
 
 jobs:
-  notify:
+  notify-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Notify start
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Notify — deployment starting
         run: |
           curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"🚀 Deployment started for **${{ github.repository }}** (branch: \`${{ github.ref_name }}\`)\"}" \
-               ${{ secrets.DISCORD_WEBHOOK_URL }}
+            -d "{\"content\": \"🚀 Deployment starting for **${{ github.repository }}** (branch \`${{ github.ref_name }}\`)\"}" \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'  # or your project's node version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
 
       - name: Deploy to Vercel
         run: |
-          npm install -g vercel
-          vercel --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
+          npx vercel --token=${{ secrets.VERCEL_TOKEN }} --prod --yes
+        # Alternatively, use a GitHub Action from the marketplace. E.g. "amondnet/vercel-action" or "vercel/vercel-action"
+        # See: https://github.com/marketplace/actions/deploy-to-vercel-action :contentReference[oaicite:0]{index=0}
 
-      - name: Notify success
+      - name: Notify — deployment success
         if: ${{ success() }}
         run: |
           curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"✅ Deployment **successful** for **${{ github.repository }}**!\"}" \
-               ${{ secrets.DISCORD_WEBHOOK_URL }}
+            -d "{\"content\": \"✅ Deployment successful for **${{ github.repository }}**!\"}" \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-      - name: Notify failure
+      - name: Notify — deployment failure
         if: ${{ failure() }}
         run: |
           curl -H "Content-Type: application/json" \
-               -d "{\"content\": \"❌ Deployment **failed** for **${{ github.repository }}**.\"}" \
-               ${{ secrets.DISCORD_WEBHOOK_URL }}
+            -d "{\"content\": \"❌ Deployment failed for **${{ github.repository }}**.\"}" \
+            ${{ secrets.DISCORD_WEBHOOK_URL }}
