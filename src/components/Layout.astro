@@ -1,6 +1,7 @@
 ---
 const { title = "Error Reporter" } = Astro.props;
 import "../assets/app.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
 <html lang="en" data-theme="cupcake">
   <head>
@@ -12,6 +13,7 @@ import "../assets/app.css";
   <body class="min-h-screen bg-base-200 text-base-content">
     <main>
       <slot />
+      <SpeedInsights />
     </main>
   </body>
 </html>
