@@ -3,93 +3,165 @@ import Layout from "../components/Layout.astro";
 ---
 
 <Layout title="Error Dashboard">
-  <div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-    
+  <div
+    class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+  >
     <!-- Animated background gradients -->
-    <div class="absolute top-20 left-20 w-72 h-72 bg-violet-600/20 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+    <div
+      class="absolute top-20 left-20 w-72 h-72 bg-violet-600/20 rounded-full blur-3xl animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-20 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse delay-1000"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl animate-pulse delay-500"
+    >
+    </div>
 
     <div class="relative max-w-4xl w-full">
-      
       <!-- Main Hero Card -->
-      <div class="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 md:p-12 text-center animate-fadeIn">
-        
+      <div
+        class="backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 md:p-12 text-center animate-fadeIn"
+      >
         <!-- Title -->
-        <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent mb-4">
+        <h1
+          class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent mb-4"
+        >
           Sistem Pelaporan Error
         </h1>
-        
+
         <!-- Description -->
         <p class="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-          Mudah melaporkan error, bug, atau masalah lainnya langsung ke tim pengembang melalui Discord, tanpa perlu email atau formulir rumit.
+          Mudah melaporkan error, bug, atau masalah lainnya langsung ke tim
+          pengembang melalui Discord, tanpa perlu email atau formulir rumit.
         </p>
 
         <!-- CTA Button -->
-        <a 
-          href="/new" 
+        <a
+          href="/new"
           class="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-violet-600 to-fuchsia-600 border-0 text-white text-lg font-semibold rounded-xl hover:from-violet-700 hover:to-fuchsia-700 hover:shadow-2xl hover:shadow-violet-500/30 hover:scale-105 transition-all duration-300"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+              clip-rule="evenodd"></path>
           </svg>
           Laporkan Error
         </a>
 
         <!-- Features Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/10">
-          
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/10"
+        >
           <!-- Feature 1 -->
           <div class="text-center animate-fadeIn delay-200">
-            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            <div
+              class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-violet-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
               </svg>
             </div>
-            <h3 class="text-white font-semibold mb-2">Lampirkan Tangkapan Layar</h3>
-            <p class="text-gray-400 text-sm">Unggah gambar untuk memperlihatkan masalah yang kamu alami</p>
+            <h3 class="text-white font-semibold mb-2">
+              Lampirkan Tangkapan Layar
+            </h3>
+            <p class="text-gray-400 text-sm">
+              Unggah gambar untuk memperlihatkan masalah yang kamu alami
+            </p>
           </div>
 
           <!-- Feature 2 -->
           <div class="text-center animate-fadeIn delay-300">
-            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-fuchsia-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            <div
+              class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-fuchsia-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
             <h3 class="text-white font-semibold mb-2">Notifikasi Instan</h3>
-            <p class="text-gray-400 text-sm">Laporan akan dikirim langsung ke tim pengembang</p>
+            <p class="text-gray-400 text-sm">
+              Laporan akan dikirim langsung ke tim pengembang
+            </p>
           </div>
 
           <!-- Feature 3 -->
           <div class="text-center animate-fadeIn delay-400">
-            <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            <div
+              class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mx-auto mb-3"
+            >
+              <svg
+                class="w-6 h-6 text-indigo-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                ></path>
               </svg>
             </div>
             <h3 class="text-white font-semibold mb-2">Tingkatan Error</h3>
-            <p class="text-gray-400 text-sm">Error, Halaman Tidak Ditemukan, atau Bugs (contoh: Tombol tidak bisa di klik)</p>
+            <p class="text-gray-400 text-sm">
+              Error, Halaman Tidak Ditemukan, atau Bugs (contoh: Tombol tidak
+              bisa di klik)
+            </p>
           </div>
-
         </div>
 
         <!-- Info Box -->
-        <div class="mt-8 p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 animate-fadeIn delay-500">
+        <div
+          class="mt-8 p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 animate-fadeIn delay-500"
+        >
           <p class="text-blue-200 text-sm">
-            💡 <strong>Tip:</strong> Provide detailed steps to reproduce the issue for faster resolution
+            💡 <strong>Tip:</strong> Jelaskan masalah lebih terperinci agar lebih
+            cepat penanganannya
           </p>
         </div>
-
       </div>
-
     </div>
   </div>
 
   <style>
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .animate-fadeIn {
       animation: fadeIn 0.6s ease-out forwards;
