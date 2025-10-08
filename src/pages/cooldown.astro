@@ -6,69 +6,113 @@ const remaining = url.searchParams.get("remaining") || "30";
 ---
 
 <Layout title="Please Wait">
-  <div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-    
-    <div class="absolute top-20 left-20 w-72 h-72 bg-orange-600/20 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-600/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+  <div
+    class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+  >
+    <div
+      class="absolute top-20 left-20 w-72 h-72 bg-orange-600/20 rounded-full blur-3xl animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-20 w-96 h-96 bg-red-600/20 rounded-full blur-3xl animate-pulse delay-1000"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-600/20 rounded-full blur-3xl animate-pulse delay-500"
+    >
+    </div>
 
-    <div class="relative backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 max-w-md w-full text-center animate-fadeIn">
-      
+    <div
+      class="relative backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 max-w-md w-full text-center animate-fadeIn"
+    >
       <!-- Timer Icon -->
       <div class="mb-6 flex justify-center">
-        <div class="w-24 h-24 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 flex items-center justify-center animate-pulse">
-          <svg class="w-12 h-12 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        <div
+          class="w-24 h-24 rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 flex items-center justify-center animate-pulse"
+        >
+          <svg
+            class="w-12 h-12 text-orange-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
       </div>
 
       <!-- Title -->
-      <h1 class="text-3xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent mb-3">
-        Whoa, Slow Down! ⏳
+      <h1
+        class="text-3xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent mb-3"
+      >
+        Eitss, Pelan Pelann Pak Supir! ⏳
       </h1>
-      
+
       <!-- Description -->
       <p class="text-gray-300 mb-6">
-        You're submitting reports too quickly. Please take a moment to breathe.
+        Untuk mencegah spam, silakan tunggu beberapa detik sebelum mengirim
+        laporan baru.
       </p>
 
       <!-- Countdown Display -->
       <div class="mb-8 p-6 rounded-xl bg-white/5 border border-white/10">
-        <p class="text-gray-400 text-sm mb-2">Please wait</p>
-        <div class="text-5xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent" id="countdown">
+        <p class="text-gray-400 text-sm mb-2">Mohon Tunggu Sebentar</p>
+        <div
+          class="text-5xl font-bold bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent"
+          id="countdown"
+        >
           {remaining}
         </div>
-        <p class="text-gray-400 text-sm mt-2">seconds</p>
+        <p class="text-gray-400 text-sm mt-2">Detik</p>
       </div>
 
       <!-- Action Buttons -->
       <div class="flex flex-col gap-3">
-        <a 
-          href="/new" 
+        <a
+          href="/new"
           id="retry-btn"
           class="btn bg-white/5 border-white/10 text-white/50 cursor-not-allowed transition-all duration-300 normal-case pointer-events-none"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
+              clip-rule="evenodd"></path>
           </svg>
-          Try Again (waiting...)
+          Ulangi Lagi (menunggu...)
         </a>
-        <a 
-          href="/" 
+        <a
+          href="/"
           class="btn bg-gradient-to-r from-orange-600 to-red-600 border-0 text-white hover:from-orange-700 hover:to-red-700 hover:shadow-xl hover:shadow-orange-500/25 transition-all duration-300 normal-case"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+            ></path>
           </svg>
-          Back to Home
+          Kembali ke Beranda
         </a>
       </div>
 
       <!-- Info -->
       <div class="mt-8 pt-6 border-t border-white/10">
         <p class="text-gray-400 text-xs">
-          This cooldown helps prevent spam and ensures quality reports.
+          Hitung mundur ini bersifat indikatif. Jika tombol "Ulangi Lagi" tidak
+          aktif setelah hitung mundur selesai, silakan muat ulang halaman.
         </p>
       </div>
     </div>
@@ -76,8 +120,14 @@ const remaining = url.searchParams.get("remaining") || "30";
 
   <style>
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .animate-fadeIn {
       animation: fadeIn 0.6s ease-out forwards;
@@ -92,8 +142,8 @@ const remaining = url.searchParams.get("remaining") || "30";
 
   <script define:vars={{ remaining }}>
     let timeLeft = parseInt(remaining);
-    const countdownEl = document.getElementById('countdown');
-    const retryBtn = document.getElementById('retry-btn');
+    const countdownEl = document.getElementById("countdown");
+    const retryBtn = document.getElementById("retry-btn");
 
     const interval = setInterval(() => {
       timeLeft--;
@@ -104,8 +154,17 @@ const remaining = url.searchParams.get("remaining") || "30";
       if (timeLeft <= 0) {
         clearInterval(interval);
         if (retryBtn) {
-          retryBtn.classList.remove('text-white/50', 'cursor-not-allowed', 'pointer-events-none');
-          retryBtn.classList.add('bg-white/10', 'hover:bg-white/20', 'hover:border-violet-500/50', 'text-white');
+          retryBtn.classList.remove(
+            "text-white/50",
+            "cursor-not-allowed",
+            "pointer-events-none"
+          );
+          retryBtn.classList.add(
+            "bg-white/10",
+            "hover:bg-white/20",
+            "hover:border-violet-500/50",
+            "text-white"
+          );
           retryBtn.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />

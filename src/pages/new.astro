@@ -3,22 +3,43 @@ import Layout from "../components/Layout.astro";
 ---
 
 <Layout title="New Error Report">
-  <div class="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  <div
+    class="min-h-screen flex items-center justify-center p-10 relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900"
+  >
     <!-- Animated background gradients -->
-    <div class="absolute top-20 left-20 w-72 h-72 bg-violet-600/20 rounded-full blur-3xl animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 0.5s;"></div>
+    <div
+      class="absolute top-20 left-20 w-72 h-72 bg-violet-600/20 rounded-full blur-3xl animate-pulse"
+    >
+    </div>
+    <div
+      class="absolute bottom-20 right-20 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-3xl animate-pulse"
+      style="animation-delay: 1s;"
+    >
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl animate-pulse"
+      style="animation-delay: 0.5s;"
+    >
+    </div>
 
     <!-- Glassmorphism card -->
-    <div class="relative backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 max-w-lg w-full">
+    <div
+      class="relative backdrop-blur-2xl bg-white/5 border border-white/10 rounded-2xl shadow-2xl p-8 max-w-lg w-full"
+    >
       <!-- Header with gradient -->
       <div class="mb-6">
         <div class="flex items-center gap-3 mb-2">
-          <h1 class="text-3xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent">
-            Report New Error
+          <h1
+            class="text-3xl font-bold bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400 bg-clip-text text-transparent"
+          >
+            Buat Laporan Error
           </h1>
         </div>
-        <p class="text-gray-300 text-sm">Help us improve by reporting issues you encounter</p>
+        <p class="text-gray-300 text-sm">
+          Isi formulir di bawah untuk mengirim laporan error ke tim pengembang
+          kami. Semakin detail informasinya, semakin cepat kami dapat
+          memperbaiki masalahnya.
+        </p>
       </div>
 
       <!-- Form -->
@@ -30,63 +51,139 @@ import Layout from "../components/Layout.astro";
       >
         <!-- Title input -->
         <div class="form-control flex flex-col">
-            <label class="label required">
-                <span class="label-text text-gray-200 font-medium text-sm">Title</span>
-            </label>
-            <input
-                name="title"
-                placeholder="Brief description of the error"
-                class="input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-500 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
-                required
-            />
+          <label class="label required">
+            <span class="label-text text-gray-200 font-medium text-sm"
+              >Judul</span
+            >
+          </label>
+          <input
+            name="title"
+            placeholder="contoh: Tombol kirim tidak berfungsi"
+            class="input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-200/40 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
+            required
+          />
         </div>
 
         <!-- Username input -->
         <div class="form-control flex flex-col">
-            <label class="label required">
-                <span class="label-text text-gray-200 font-medium text-sm">Name Account</span>
-            </label>
-            <input
-                name="username"
-                placeholder="Brief description of the error"
-                class="input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-500 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
-                required
-            />
+          <label class="label required">
+            <span class="label-text text-gray-200 font-medium text-sm"
+              >Nama Akun</span
+            >
+          </label>
+          <input
+            name="username"
+            placeholder="contoh: SAC001"
+            class="input w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-200/40 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
+            required
+          />
         </div>
 
         <!-- Message textarea -->
         <div class="form-control flex flex-col">
           <label class="label required">
-            <span class="label-text text-gray-200 font-medium text-sm">Error Details</span>
+            <span class="label-text text-gray-200 font-medium text-sm"
+              >Detail Error</span
+            >
           </label>
           <textarea
             name="message"
-            placeholder="Describe what happened and steps to reproduce..."
-            class="textarea w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-500 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300 min-h-32"
-            required
-          ></textarea>
+            placeholder="Jelaskan secara detail error yang kamu alami, langkah untuk mereproduksi, dan informasi tambahan lainnya..."
+            class="textarea w-full bg-white/5 border-white/10 backdrop-blur-sm text-white placeholder:text-gray-200/40 focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300 min-h-32"
+            required></textarea>
         </div>
 
-        <!-- Severity select -->
+        <!-- Custom Select Container -->
         <div class="form-control flex flex-col">
           <label class="label">
-            <span class="label-text text-gray-200 font-medium text-sm">Severity Level</span>
+            <span class="label-text text-gray-200 font-medium text-sm"
+              >Level Error</span
+            >
           </label>
-          <select
-            name="severity"
-            class="select w-full bg-white/5 border-white/10 backdrop-blur-sm text-white focus:bg-white/10 focus:border-violet-500/50 focus:outline-none transition-all duration-300"
-          >
-            <option value="bug" class="bg-slate-800 text-white">bug</option>
-            <option value="error" selected class="bg-slate-800 text-white">error</option>
-            <option value="page_not_found" class="bg-slate-800 text-white">halaman tidak ditemukan</option>
-            <option value="other">Lainnya</option>
-          </select>
+          <div class="relative">
+            <!-- Hidden actual select for form submission -->
+            <select name="severity" id="actualSelect" class="hidden">
+              <option value="bug">Bug</option>
+              <option value="error" selected>Error</option>
+              <option value="page_not_found">Halaman tidak ditemukan</option>
+              <option value="other">Lainnya</option>
+            </select>
+
+            <!-- Custom Select Button -->
+            <button
+              type="button"
+              id="selectButton"
+              class="w-full bg-white/5 border border-white/10 backdrop-blur-md text-white rounded-md px-4 py-2 cursor-pointer hover:bg-white/8 hover:border-violet-500/30 shadow-lg shadow-black/20 transition-all duration-300 flex items-center justify-between focus:outline-none focus:bg-white/10 focus:border-violet-500/50"
+            >
+              <span id="selectedText" class="flex items-center gap-2">
+                <span>⚠️</span>
+                <span>Error</span>
+              </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-violet-400 transition-transform duration-300"
+                id="arrow"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </button>
+
+            <!-- Custom Dropdown Options -->
+            <div
+              id="optionsContainer"
+              class="absolute w-full mt-2 bg-slate-900/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-2xl shadow-black/50 overflow-hidden transition-all duration-300 max-h-0 opacity-0 z-50"
+            >
+              <div
+                data-value="bug"
+                data-emoji="🐛"
+                data-text="Bug"
+                class="option-item px-4 py-3 text-white hover:bg-violet-600/80 cursor-pointer transition-all duration-200 flex items-center gap-2 border-b border-white/5"
+              >
+                <span>🐛</span>
+                <span>Bug</span>
+              </div>
+              <div
+                data-value="error"
+                data-emoji="⚠️"
+                data-text="Error"
+                class="option-item px-4 py-3 text-white hover:bg-violet-600/80 cursor-pointer transition-all duration-200 flex items-center gap-2 border-b border-white/5 bg-violet-600/20"
+              >
+                <span>⚠️</span>
+                <span>Error</span>
+              </div>
+              <div
+                data-value="page_not_found"
+                data-emoji="🔍"
+                data-text="Halaman tidak ditemukan"
+                class="option-item px-4 py-3 text-white hover:bg-violet-600/80 cursor-pointer transition-all duration-200 flex items-center gap-2 border-b border-white/5"
+              >
+                <span>🔍</span>
+                <span>Halaman tidak ditemukan</span>
+              </div>
+              <div
+                data-value="other"
+                data-emoji="📝"
+                data-text="Lainnya"
+                class="option-item px-4 py-3 text-white hover:bg-violet-600/80 cursor-pointer transition-all duration-200 flex items-center gap-2"
+              >
+                <span>📝</span>
+                <span>Lainnya</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- File input -->
         <div class="form-control flex flex-col">
           <label class="label">
-            <span class="label-text text-gray-200 font-medium text-sm optional">Screenshot</span>
+            <span class="label-text text-gray-200 font-medium text-sm optional"
+              >Bukti Tangkapan Layar</span
+            >
           </label>
           <input
             type="file"
@@ -101,12 +198,74 @@ import Layout from "../components/Layout.astro";
           type="submit"
           class="btn bg-gradient-to-r from-violet-600 to-fuchsia-600 border-0 text-white font-semibold mt-2 hover:from-violet-700 hover:to-fuchsia-700 hover:shadow-xl hover:shadow-violet-500/25 hover:scale-[1.02] transition-all duration-300 normal-case"
         >
-          <span>Send Report</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+          <span>Kirim Laporan</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"
+            ></path>
           </svg>
         </button>
       </form>
     </div>
   </div>
+
+  <script is:inline>
+    const selectButton = document.getElementById("selectButton");
+    const optionsContainer = document.getElementById("optionsContainer");
+    const selectedText = document.getElementById("selectedText");
+    const actualSelect = document.getElementById("actualSelect");
+    const arrow = document.getElementById("arrow");
+    const optionItems = document.querySelectorAll(".option-item");
+
+    let isOpen = false;
+
+    selectButton?.addEventListener("click", () => {
+      isOpen = !isOpen;
+      if (isOpen) {
+        optionsContainer.style.maxHeight = "300px";
+        optionsContainer.style.opacity = "1";
+        arrow.style.transform = "rotate(180deg)";
+      } else {
+        optionsContainer.style.maxHeight = "0";
+        optionsContainer.style.opacity = "0";
+        arrow.style.transform = "rotate(0deg)";
+      }
+    });
+
+    optionItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        const value = item.getAttribute("data-value");
+        const emoji = item.getAttribute("data-emoji");
+        const text = item.getAttribute("data-text");
+
+        selectedText.innerHTML = `<span>${emoji}</span> <span>${text}</span>`;
+        actualSelect.value = value;
+
+        optionItems.forEach((opt) => opt.classList.remove("bg-violet-600/20"));
+        item.classList.add("bg-violet-600/20");
+
+        isOpen = false;
+        optionsContainer.style.maxHeight = "0";
+        optionsContainer.style.opacity = "0";
+        arrow.style.transform = "rotate(0deg)";
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !selectButton.contains(e.target) &&
+        !optionsContainer.contains(e.target)
+      ) {
+        isOpen = false;
+        optionsContainer.style.maxHeight = "0";
+        optionsContainer.style.opacity = "0";
+        arrow.style.transform = "rotate(0deg)";
+      }
+    });
+  </script>
 </Layout>

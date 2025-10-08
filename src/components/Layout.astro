@@ -3,13 +3,22 @@ const { title = "Error Reporter" } = Astro.props;
 import "../assets/app.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
 ---
-<html lang="en" data-theme="cupcake">
+
+<html lang="id" data-theme="cupcake">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sistem pelaporan error sederhana yang mengirim laporan langsung ke Discord. Mudah digunakan, tanpa perlu email atau formulir rumit."
+    />
+    <meta name="author" content="aditlfp" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
-  </head> 
+    <link rel="stylesheet" href="/src/assets/app.css" />
+  </head>
   <body class="min-h-screen bg-base-200 text-base-content">
     <main>
       <slot />
